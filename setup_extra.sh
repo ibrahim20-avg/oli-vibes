@@ -1,0 +1,82 @@
+nano setup_extra.sh
+#!/bin/bash
+
+# Create README
+cat > README.md << EOF
+# Oli Vibes — AI Music Website
+
+This is the official static website for **Oli Vibes**, built to showcase and share AI-generated music.
+
+Features:
+- Clean interface
+- Song downloads
+- Auto-update tools
+- Logo & metadata files
+
+EOF
+
+# Create LICENSE (MIT)
+cat > LICENSE << EOF
+MIT License
+
+Copyright (c) $(date +%Y) Oli Vibes
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software...
+EOF
+
+# Create COPYRIGHT file
+cat > COPYRIGHT << EOF
+Copyright © $(date +%Y) Oli Vibes
+All rights reserved.
+EOF
+
+# Create logo SVG
+cat > logo.svg << EOF
+<svg width="300" height="80" xmlns="http://www.w3.org/2000/svg">
+  <rect width="300" height="80" fill="purple"/>
+  <text x="50%" y="50%" fill="gold" font-size="36" font-weight="bold" text-anchor="middle" dominant-baseline="middle">
+    OLI VIBES
+  </text>
+</svg>
+EOF
+
+# Create favicon
+cat > favicon.svg << EOF
+<svg width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="16" cy="16" r="16" fill="purple"/>
+  <text x="50%" y="50%" fill="gold" font-size="18" text-anchor="middle" dominant-baseline="middle">OV</text>
+</svg>
+EOF
+
+# Create auto timestamp file
+date > last_update.txt
+
+# Create meta folder
+mkdir -p meta
+
+# ABOUT file
+cat > meta/ABOUT.md << EOF
+# About Oli Vibes
+
+Oli Vibes is an AI-powered musical artist blending futuristic sound with artistic creativity.
+EOF
+
+# Socials template
+cat > meta/SOCIALS.md << EOF
+# Social Links
+
+Instagram:  
+Twitter:  
+YouTube:  
+TikTok:  
+EOF
+
+# Git ignore file
+cat > .gitignore << EOF
+*.tmp
+*.log
+node_modules/
+EOF
+
+echo "All extra files created successfully."
